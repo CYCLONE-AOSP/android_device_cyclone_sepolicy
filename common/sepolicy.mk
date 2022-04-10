@@ -10,25 +10,25 @@ endif
 endif
 
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
-    device/lineage/sepolicy/common/public
+    device/aosp/sepolicy/common/public
 
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
-    device/lineage/sepolicy/common/private
+    device/aosp/sepolicy/common/private
 
 ifeq ($(TARGET_USES_PREBUILT_VENDOR_SEPOLICY), true)
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
-    device/lineage/sepolicy/common/dynamic \
-    device/lineage/sepolicy/common/system
+    device/aosp/sepolicy/common/dynamic \
+    device/aosp/sepolicy/common/system
 else
 BOARD_VENDOR_SEPOLICY_DIRS += \
-    device/lineage/sepolicy/common/dynamic \
-    device/lineage/sepolicy/common/vendor
+    device/aosp/sepolicy/common/dynamic \
+    device/aosp/sepolicy/common/vendor
 endif
 
 # Selectively include legacy rules defined by the products
--include device/lineage/sepolicy/legacy-common/sepolicy.mk
+-include device/aosp/sepolicy/legacy-common/sepolicy.mk
 
 # Include atv rules on atv product
 ifeq ($(PRODUCT_IS_ATV), true)
-include device/lineage/sepolicy/atv/sepolicy.mk
+include device/aosp/sepolicy/atv/sepolicy.mk
 endif
